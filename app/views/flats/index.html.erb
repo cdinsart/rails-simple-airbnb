@@ -1,0 +1,32 @@
+<h1>Welcome to Airbnbarcelona</h1>
+
+<div class="cards border p-1">
+  <% @flats.each do |flat| %>
+  <div class="card shadow mx-auto p-3 rounded d-flex justify-content-between">
+    <div class="card-content">
+    <p>
+      <strong>Name:</strong>
+      <%= link_to flat.name, flat_path(flat) %>
+    </p>
+    <p>
+      <strong>Address:</strong>
+    <%= flat.address %>
+    </p>
+    <p>
+      <strong>Description:</strong>
+    <%= flat.description %>
+    </p>
+    <p>
+      <strong>Price per night:</strong>
+    <%= flat.price_per_night %>
+    </p>
+    <p>
+      <strong>Number of guests:</strong>
+    <%= flat.number_of_guests %>
+    </p>
+    </div>
+    <img src="https://source.unsplash.com/1600x900/?flat" class="object-cover-fit w-50 h-50 justify-content-center" alt="">
+  </div>
+    <% end %>
+</div>
+<%= link_to 'Create a new flat', new_flat_path %>
